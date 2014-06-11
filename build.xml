@@ -1,0 +1,27 @@
+<!DOCTYPE GTA-Server>
+<project name="builder" default="deploy" basedir=".">
+ <target name="deploy">
+ 
+     <copy todir="C:/xampp/htdocs">
+  
+         <fileset dir=".">
+             <exclude name="build.xml"></exclude>
+             <exclude name=".gitignore"></exclude>
+             <exclude name="README.md"></exclude>
+             <exclude name=".project"></exclude>
+             <exclude name=".buildpath"></exclude>
+             <exclude name=".settings/*"></exclude>
+             <exclude name=".git/**"></exclude>
+             <exclude name=".externalToolBuilders/**"></exclude>
+         </fileset>
+ 		
+         <fileset dir=".">
+		    <different targetdir="C:/xampp/htdocs"
+		        ignoreFileTimes="false"
+		        ignoreContents="true" /> 
+		</fileset>
+     </copy>
+ 
+ </target> 
+ 
+</project>
