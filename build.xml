@@ -11,15 +11,13 @@
              <exclude name=".project"></exclude>
              <exclude name=".buildpath"></exclude>
              <exclude name=".settings/*"></exclude>
+             <exclude name="database.sql"></exclude>
              <exclude name=".git/**"></exclude>
              <exclude name=".externalToolBuilders/**"></exclude>
-         </fileset>
- 		
-         <fileset dir=".">
-		    <different targetdir="C:/xampp/htdocs"
+              <different targetdir="C:/xampp/htdocs"
 		        ignoreFileTimes="false"
-		        ignoreContents="true" /> 
-		</fileset>
+		        ignoreContents="true" />
+         </fileset>
      </copy>
  
  </target> 
