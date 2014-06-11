@@ -5,7 +5,7 @@ require_once 'api.php';
 
 Flight::route('/chat', function(){
 	API::send(API::exec("chat", $_REQUEST));
-});
+}); 
 
 Flight::route('/login', function(){
 	API::send(API::exec("login", $_REQUEST));
