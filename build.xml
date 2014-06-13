@@ -1,16 +1,27 @@
 <!DOCTYPE GTA-Server>
-<project name="builder" default="deploy" basedir=".">
+<project name="builder" default="both" basedir=".">
+ <target name="both">
+     <antcall target="fetch"></antcall>
+     <antcall target="deploy"></antcall> 
+ </target>
+
+ <target name="fetch">
+   <exec executable="cmd">
+    <arg value="/c"/>
+    <arg value="call ../../../mysql_git_copy_ant.bat"/>
+    <arg value="-p"/>
+  </exec>
+ </target>
+
  <target name="deploy">
- 
      <copy todir="C:/xampp/htdocs">
-  
-         <fileset dir=".">
+         <fileset dir="."> 
              <exclude name="build.xml"></exclude>
              <exclude name=".gitignore"></exclude>
              <exclude name="README.md"></exclude>
              <exclude name=".project"></exclude>
              <exclude name=".buildpath"></exclude>
-             <exclude name=".settings/*"></exclude>
+             <exclude name=".settings/**"></exclude>
              <exclude name="database.sql"></exclude>
              <exclude name=".git/**"></exclude>
              <exclude name=".externalToolBuilders/**"></exclude>
